@@ -1,3 +1,3 @@
 ## <p align="center"> <b> [WIP] GWfox-TV </b> </p>
-<img width="1113" height="696" alt="01" src="https://github.com/user-attachments/assets/366dd123-8480-498c-94f8-24a943324e6b" />
-<img width="1113" height="696" alt="02" src="https://github.com/user-attachments/assets/25f8ba22-a7ad-446e-b6a7-9db377ad7d36" />
+<img width="1113" height="696" alt="01" src="https://github.com/user-attachments/assets/29e54b98-91ab-4fd8-b938-62440762bc4f" />
+<img width="1113" height="696" alt="02" src="https://github.com/user-attachments/assets/89db1885-6be2-4e64-b90b-d7d9b3dcb976" />
