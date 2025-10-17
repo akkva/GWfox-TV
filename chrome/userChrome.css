@@ -470,6 +470,15 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   margin-left: 10px !important;
 }
 
+#identity-box,
+#tracking-protection-icon-container {
+  margin-bottom: 9.5px !important;
+}
+
+#notification-popup-box {
+  margin-top: .5px !important;
+}
+
 .urlbar-page-action,
 #notification-popup-box,
 #identity-permission-box,
@@ -626,6 +635,10 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   background: transparent !important;
   border: none !important;
   padding: 8px !important;
+}
+
+#notification-popup-box {
+  margin-top: 3px !important;
 }
 
 .urlbar-page-action {
