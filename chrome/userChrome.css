@@ -1179,9 +1179,9 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 }
 
 .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
-  min-height: 18px !important;
+  min-height: 12px !important;
   max-width: 2px !important;
-  margin: 6px 0 0 0 !important;
+  margin: 12px 0 0 0 !important;
   border-radius: 2px !important;
 }
 
@@ -2062,7 +2062,7 @@ input {
 }
 
 .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
-  margin: 6px 0 6px 0 !important;
+  margin: 12px 0 12px 0 !important;
 }
 
 .tab-group-label {
