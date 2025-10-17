@@ -118,7 +118,7 @@
 }
 }
 
-:has([sidebar-shown]) {
+:root:not([inDOMFullscreen]):has([sidebar-shown]) {
 #tabbrowser-tabbox {
 @media -moz-pref("sidebar.revamp") {
 @media -moz-pref("sidebar.revamp.round-content-area") {
