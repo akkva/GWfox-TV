@@ -1988,6 +1988,20 @@ input {
   opacity: .5 !important;
 }
 }
+
+#multi-stage-message-root {
+  background-color: transparent !important;
+  --background-color-canvas: transparent !important;
+
+.screen {
+  border-radius: 0 !important;
+  outline: none !important;
+}
+}
+
+#header, #summarize-btn-container {
+  border: none !important;
+}
 }
 
 @media -moz-pref("sidebar.verticalTabs") {
