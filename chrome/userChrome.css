@@ -2002,6 +2002,10 @@ input {
 #header, #summarize-btn-container {
   border: none !important;
 }
+
+span > img:is([src="chrome://browser/content/genai/assets/brands/claude.svg"], [src="chrome://browser/content/genai/assets/brands/chatgpt.svg"], [src="chrome://browser/content/genai/assets/brands/copilot.svg"], [src="chrome://browser/content/genai/assets/brands/gemini.svg"], [src="chrome://browser/content/genai/assets/brands/huggingchat.svg"], [src="chrome://browser/content/genai/assets/brands/lechat.svg"]) {
+  content: url("chrome://global/skin/icons/highlights.svg");
+}
 }
 
 @media -moz-pref("sidebar.verticalTabs") {
