@@ -179,7 +179,7 @@
 
 :has(#nav-bar-overflow-button:not(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) > #nav-bar-overflow-button)) & {
   inset-inline-end: 118px;
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
   inset-inline-end: 82px;
 }
 }
@@ -1036,7 +1036,7 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 :has(#nav-bar-overflow-button:not(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) > #nav-bar-overflow-button)) & {
 &::before {
   width: 144px;
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
   width: 108px;
 }
 }
@@ -1525,7 +1525,7 @@ tree {
 }
 }
 
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
 @media not -moz-pref("sidebar.verticalTabs") {
 #urlbar-container {
   margin-left: 60px !important;
@@ -2171,7 +2171,7 @@ tab-group > .tabbrowser-tab,
 #nav-bar {
   margin-left: 160px !important;
   transition: margin-left .35s !important;
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
   margin-left: 50px !important;
 @media -moz-pref("sidebar.visibility", "expand-on-hover") {
   margin-left: 160px !important;
@@ -2186,13 +2186,13 @@ tab-group > .tabbrowser-tab,
   margin: -44px 7px 8px 8px !important;
   padding-top: 39px !important;
   z-index: 5;
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
   visibility: collapse;
 }
 @media -moz-pref("sidebar.visibility", "expand-on-hover") {
   background: var(--toolbox-bgcolor) !important;
   background-image: var(--bg6) !important;
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
   visibility: visible;
 }
 }
@@ -2207,7 +2207,7 @@ tab-group > .tabbrowser-tab,
   width: 29px !important;
   height: 27px !important;
   padding: 5px !important;
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
   left: 85px;
 @media -moz-pref("sidebar.visibility", "expand-on-hover") {
   left: 186px;
@@ -2224,7 +2224,7 @@ tab-group > .tabbrowser-tab,
 #forward-button {
 &::before {
   left: 81px;
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
 @media -moz-pref("sidebar.visibility", "expand-on-hover") {
   content: none;
 }
@@ -2232,7 +2232,7 @@ tab-group > .tabbrowser-tab,
 }
 &::after {
   left: 116.5px;
-@media (max-width: 750px) {
+@media (min-width: 610px) and (max-width: 866px) {
 @media -moz-pref("sidebar.visibility", "expand-on-hover") {
   content: none;
 }
