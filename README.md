@@ -1,8 +1,8 @@
 ## <p align="center"> <b> GWfox-TV 🦊 </b> </p>
 <p align="center">This theme compatible with Firefox 145+ on macOS Tahoe</p>
 <picture>
-<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/daea20f6-b2e2-49cd-a6d8-f023626f188b">
-<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/55b74f0a-c5c6-4b6a-a783-728fb1ef1866">
+<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/5b1435eb-0a9a-466b-bf88-cfc44c7df022">
+<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/0aaaf93a-6fd5-493c-92f6-8ae3fb09d397">
 <img alt="01">
 </picture>
 
@@ -25,5 +25,3 @@
 
 - Set `browser.theme.native-theme` to true to enable translucency effects
 - Add `gwtv.atbc` to enable [Adaptive Tab Bar Colour](https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour)
-<img width="1154" height="800" alt="01" src="https://github.com/user-attachments/assets/5b1435eb-0a9a-466b-bf88-cfc44c7df022" />
-<img width="1154" height="800" alt="02" src="https://github.com/user-attachments/assets/0aaaf93a-6fd5-493c-92f6-8ae3fb09d397" />
