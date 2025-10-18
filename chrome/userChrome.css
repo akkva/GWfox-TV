@@ -717,6 +717,14 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   opacity: 1 !important;
 }
 
+@media -moz-pref("sidebar.verticalTabs") {
+#urlbar:not([breakout][breakout-extend], [focused]) .urlbar-input-container[pageproxystate="invalid"] {
+  padding-inline-start: calc(50% - 105px) !important;
+  transition: .35s;
+  transition-delay: .25s;
+}
+}
+
 @media not -moz-pref("sidebar.verticalTabs") {
 .urlbar-page-action:not(#star-button-box) {
   margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding));
