@@ -1886,6 +1886,28 @@ input {
 }
 }
 
+@-moz-document url("chrome://browser/content/genai/chat.html") {
+#multi-stage-message-root {
+  background-color: transparent !important;
+  --background-color-canvas: transparent !important;
+
+.screen {
+  border-radius: 0 !important;
+  outline: none !important;
+}
+}
+
+#header, #summarize-btn-container {
+  border: none !important;
+}
+
+body {
+  background: light-dark(#fff, #1e1e1e);
+  border: 1px solid var(--bg3);
+  border-radius: 12px;
+}
+}
+
 /* icons */
 
 #back-button {
@@ -1975,6 +1997,7 @@ input {
 #sidebar {
   box-shadow: none !important;
   background-color: var(--button-bgcolor) !important;
+  border-radius: 12px !important;
 }
 
 #sidebar-main {
@@ -1987,20 +2010,6 @@ input {
 &:-moz-window-inactive {
   opacity: .5 !important;
 }
-}
-
-#multi-stage-message-root {
-  background-color: transparent !important;
-  --background-color-canvas: transparent !important;
-
-.screen {
-  border-radius: 0 !important;
-  outline: none !important;
-}
-}
-
-#header, #summarize-btn-container {
-  border: none !important;
 }
 
 span > img:is([src="chrome://browser/content/genai/assets/brands/claude.svg"], [src="chrome://browser/content/genai/assets/brands/chatgpt.svg"], [src="chrome://browser/content/genai/assets/brands/copilot.svg"], [src="chrome://browser/content/genai/assets/brands/gemini.svg"], [src="chrome://browser/content/genai/assets/brands/huggingchat.svg"], [src="chrome://browser/content/genai/assets/brands/lechat.svg"]) {
