@@ -19,6 +19,7 @@
     - `toolkit.legacyUserProfileCustomizations.stylesheets`
     - `svg.context-properties.content.enabled`
     - `sidebar.animation.enabled`
+  - Set `widget.macos.native-context-menus` to false
 - Restart Firefox!
 
 ## Further customization
