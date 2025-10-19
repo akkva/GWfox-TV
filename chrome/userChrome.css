@@ -731,7 +731,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 @media -moz-pref("sidebar.verticalTabs") {
-#urlbar:not([breakout][breakout-extend], [focused]) .urlbar-input-container[pageproxystate="invalid"] {
+#urlbar:not([breakout][breakout-extend], [focused], [usertyping]) .urlbar-input-container[pageproxystate="invalid"] {
   padding-inline-start: calc(50% - 105px) !important;
   transition: .35s;
   transition-delay: .25s;
