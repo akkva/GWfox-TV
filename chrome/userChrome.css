@@ -2212,6 +2212,8 @@ body {
 
 #context-copylink::before,
 #context-stripOnShareLink::before,
+#context-copy-link-to-highlight::before,
+#context-copy-clean-link-to-highlight::before,
 #context-copyaudiourl::before,
 #context-copyvideourl::before {
   content: url("chrome://global/skin/icons/link.svg");
