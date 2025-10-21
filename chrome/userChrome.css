@@ -1423,7 +1423,7 @@ menupopup,
 
 #tabContextMenu .menu-icon,
 #contentAreaContextMenu .menu-icon {
-  display: none;
+  scale: .75;
 }
 
 menuitem, menu {
@@ -2010,6 +2010,7 @@ body {
   fill: currentColor;
   -moz-context-properties: fill;
   margin-inline: 0 8px !important;
+  scale: .75;
 }
 
 #appMenu-zoom-controls::before {
@@ -2054,6 +2055,233 @@ body {
 #appMenu-new-private-window-button2 {list-style-image: url("chrome://browser/skin/privateBrowsing.svg")}
 #appMenu-fullscreen-button2 {list-style-image: url("data:image/svg+xml,%3Csvg width='12' height='12' fill='context-fill' fill-opacity='context-fill-opacity' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 7.5,9 H 4 A 1,1 0 0 1 3,8 V 4.5 M 4.5,3 H 8 a 1,1 0 0 1 1,1 v 3.5 z'/%3E%3C/svg%3E") !important}
 #appMenu-fullscreen-button2[checked] {list-style-image: url("data:image/svg+xml,%3Csvg width='12' height='12' fill='context-fill' fill-opacity='context-fill-opacity' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 6,10.5 V 7 A 1,1 0 0 0 5,6 H 1.5 m 9,0 H 7 A 1,1 0 0 1 6,5 V 1.5 Z'/%3E%3C/svg%3E") !important}
+
+:where(#contentAreaContextMenu > menu:not(.menu-iconic))::before,
+:where(#contentAreaContextMenu > menuitem:not(.menuitem-iconic))::before {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  padding-inline-end: 8px;
+  -moz-context-properties: fill;
+  fill: currentColor;
+  scale: .75;
+}
+
+#contentAreaContextMenu > menuitem[type="checkbox"][_moz-menuactive]::before,
+#contentAreaContextMenu > menuitem[type="checkbox"][checked="true"]::before {
+  width: unset;
+  height: unset;
+}
+
+#context-back::before {
+  content: url("chrome://browser/skin/back.svg");
+}
+
+#context-forward::before {
+  content: url("chrome://browser/skin/forward.svg");
+}
+
+#context-reload::before {
+  content: url("chrome://global/skin/icons/reload.svg");
+}
+
+#context-stop::before {
+  content: url("chrome://global/skin/icons/close.svg");
+}
+
+#context-openlinkintab::before {
+  content: url("chrome://browser/skin/tab.svg");
+}
+
+#context-openlink::before {
+  content: url("chrome://browser/skin/window.svg");
+}
+
+#context-openlinkprivate::before {
+  content: url("chrome://browser/skin/privateBrowsing.svg");
+}
+
+#context-savelinktopocket::before {
+  content: url("chrome://global/skin/icons/pocket-outline.svg");
+}
+
+#context-openlinkinusercontext-menu::before {
+  content: url(chrome://browser/skin/fingerprint.svg);
+}
+
+#context-searchselect::before {
+  content: url(chrome://global/skin/icons/search-glass.svg);
+}
+
+#context-bookmarkpage::before,
+#context-bookmarklink::before {
+  content: url("chrome://browser/skin/bookmarks-toolbar.svg");
+}
+
+#context-inspect-a11y::before {
+  content: url("chrome://devtools/skin/images/tool-accessibility.svg");
+}
+
+#context-inspect::before {
+  content: url("chrome://devtools/skin/images/tool-inspector.svg");
+}
+
+#spell-check-enabled::before {
+  content: url(chrome://devtools/skin/images/tool-styleeditor.svg);
+}
+
+#contentAreaContextMenu > #fill-login::before {
+  content: url("chrome://browser/skin/login.svg");
+}
+
+#use-relay-mask::before {
+  content: url("chrome://browser/skin/preferences/relay-logo.svg");
+}
+
+#context-selectall::before,
+#context-pdfjs-selectall::before,
+#context-pdfjs-highlight-selection::before {
+  content: url("chrome://devtools/skin/images/highlight-selector.svg");
+  scale: 1;
+}
+
+#context-copy::before,
+#context-pdfjs-copy::before {
+  content: url("chrome://global/skin/icons/edit-copy.svg");
+}
+
+#context-cut::before,
+#context-pdfjs-cut::before {
+  content: url("chrome://browser/skin/edit-cut.svg");
+}
+
+#context-paste-no-formatting::before,
+#context-paste::before,
+#context-pdfjs-paste::before {
+  content: url("chrome://browser/skin/edit-paste.svg");
+}
+
+#context-delete::before,
+#context-pdfjs-delete::before {
+  content: url("chrome://global/skin/icons/delete.svg");
+}
+
+#context-video-saveimage::before,
+#context-take-screenshot::before {
+  content: url("chrome://devtools/skin/images/command-screenshot.svg");
+}
+
+#context-sendpagetodevice::before,
+#context-sendlinktodevice::before {
+  content: url("chrome://browser/skin/synced-tabs.svg");
+}
+
+#context-copylink::before,
+#context-stripOnShareLink::before,
+#context-copyaudiourl::before,
+#context-copyvideourl::before {
+  content: url("chrome://global/skin/icons/link.svg");
+}
+
+#context-saveaudio::before,
+#context-saveimage::before,
+#context-savelink::before,
+#context-savevideo::before,
+#context-savepage::before {
+  content: url("chrome://browser/skin/save.svg");
+}
+
+#context-sendimage::before,
+#context-sendvideo::before,
+#context-sendaudio::before {
+  content: url("chrome://browser/skin/mail.svg");
+}
+
+#context-undo::before,
+#context-pdfjs-undo::before,
+#context-redo::before,
+#context-pdfjs-redo::before {
+  content: url("chrome://global/skin/icons/undo.svg");
+}
+
+#context-redo::before,
+#context-pdfjs-redo::before {
+  transform-box: content-box;
+  transform: scaleX(-1);
+}
+
+#context-media-play::before {
+  content: url("chrome://devtools/skin/images/play.svg");
+}
+
+#context-media-pause::before {
+  content: url("chrome://devtools/skin/images/pause.svg");
+}
+
+#context-media-mute::before {
+  content: url("chrome://global/skin/media/audio-muted.svg");
+}
+
+#context-media-unmute::before {
+  content: url("chrome://global/skin/media/audio.svg");
+}
+
+#context-media-hidecontrols::before,
+#context-media-showcontrols::before {
+  content: url("chrome://devtools/skin/images/dock-bottom.svg");
+}
+
+#context-media-loop::before {
+  content: url("chrome://browser/skin/notification-icons/autoplay-media.svg");
+}
+
+#context-leave-dom-fullscreen::before {
+  content: url("chrome://browser/skin/fullscreen-exit.svg");
+}
+
+#context-video-fullscreen::before {
+  content: url("chrome://browser/skin/fullscreen.svg");
+}
+
+#context-video-pictureinpicture::before {
+  content: url("chrome://global/skin/media/picture-in-picture-open.svg");
+}
+
+#context-media-playbackrate::before {
+  content: url("chrome://global/skin/icons/performance.svg");
+}
+
+#context-reveal-password::before {
+  -moz-context-properties: fill,stroke;
+  stroke: currentColor;
+  content: url("chrome://devtools/skin/images/eye-opened.svg");
+}
+
+#context-print-selection::before {
+  content: url("chrome://global/skin/icons/print.svg");
+}
+
+#context-translate-selection::before,
+#spell-add-dictionaries-main::before,
+#spell-dictionaries::before {
+  content: url("chrome://browser/skin/translations.svg");
+}
+
+#context-ask-chat::before {
+  content: url("chrome://global/skin/icons/highlights.svg");
+}
+
+#context-bidi-text-direction-toggle::before,
+#context-bidi-page-direction-toggle::before {
+  content: url("chrome://devtools/skin/images/command-bidi.svg");
+}
+
+#context-viewpartialsource-selection::before,
+#context-viewsource::before {
+  content: url("chrome://browser/skin/characterEncoding.svg");
+}
 
 /* verticalTabs */
 
