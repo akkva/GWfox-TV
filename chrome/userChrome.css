@@ -2034,6 +2034,9 @@ body {
   background-image: url("chrome://browser/skin/fxa/avatar-empty.svg");
   margin-inline-start: -2px;
   margin-inline-end: 9px;
+  -moz-context-properties: fill;
+  fill: currentColor;
+  scale: .75;
 }
 
 #appMenu-downloads-button {list-style-image: url("chrome://browser/skin/downloads/downloads.svg")}
