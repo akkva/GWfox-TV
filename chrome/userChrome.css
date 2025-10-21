@@ -1426,6 +1426,10 @@ menupopup,
   scale: .75;
 }
 
+.menu-icon[srcset^="moz-extension://"] {
+  filter: grayscale(100%) contrast(200%) !important;
+}
+
 menuitem, menu {
   appearance: none !important;
   border-radius: 7px !important;
@@ -2606,7 +2610,7 @@ tab-group > .tabbrowser-tab,
 #urlbar {
   left: 34vw !important;
   backdrop-filter: blur(15px) !important;
-  border-radius: 8px !important;
+  border-radius: 30px !important;
   min-height: 50px !important;
 }
 }
