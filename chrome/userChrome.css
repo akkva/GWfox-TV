@@ -2131,12 +2131,16 @@ body {
 
 #toolbar-context-bookmarkSelectedTab::before,
 #toolbar-context-bookmarkSelectedTabs::before,
-#toggle_PersonalToolbar::before,
 #context_bookmarkTab::before,
 #context_bookmarkSelectedTabs::before,
 #context-bookmarkpage::before,
 #context-bookmarklink::before {
   content: url("chrome://browser/skin/bookmark.svg");
+  scale: .7;
+}
+
+#toggle_PersonalToolbar::before {
+  content: url("chrome://browser/skin/bookmarks-toolbar.svg");
   scale: .7;
 }
 
