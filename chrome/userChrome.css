@@ -2098,6 +2098,7 @@ body {
 
 #toolbar-context-reloadSelectedTab::before,
 #toolbar-context-reloadSelectedTabs::before,
+#context-reloadimage::before,
 #context_reloadTab::before,
 #context_reloadSelectedTabs::before,
 #context-reload::before {
@@ -2108,8 +2109,15 @@ body {
   content: url("chrome://global/skin/icons/close.svg");
 }
 
+#context-setDesktopBackground::before {
+  content: url("resource://pdf.js/web/images/toolbarButton-editorStamp.svg");
+}
+
+#context-viewimage::before,
+#context-viewvideo::before,
 #context-openlinkintab::before {
-  content: url("chrome://browser/skin/tab.svg");
+  content: url("chrome://devtools/skin/images/debugging-tabs.svg");
+  scale: .68;
 }
 
 #context-openlink::before {
@@ -2172,6 +2180,11 @@ body {
   content: url("chrome://browser/skin/preferences/relay-logo.svg");
 }
 
+#context-imagetext::before {
+  content: url("chrome://devtools/skin/images/case-match.svg");
+  scale: .85;
+}
+
 #context-selectall::before,
 #context-pdfjs-selectall::before,
 #context-pdfjs-highlight-selection::before {
@@ -2180,6 +2193,7 @@ body {
 }
 
 #context-copy::before,
+#context-copyimage-contents::before,
 #context-pdfjs-copy::before {
   content: url("chrome://global/skin/icons/edit-copy.svg");
 }
@@ -2215,8 +2229,10 @@ body {
 #context-copy-link-to-highlight::before,
 #context-copy-clean-link-to-highlight::before,
 #context-copyaudiourl::before,
+#context-copyimage::before,
 #context-copyvideourl::before {
   content: url("chrome://global/skin/icons/link.svg");
+  scale: .7;
 }
 
 #context-saveaudio::before,
@@ -2225,6 +2241,7 @@ body {
 #context-savevideo::before,
 #context-savepage::before {
   content: url("chrome://browser/skin/save.svg");
+  scale: .68;
 }
 
 #context-sendimage::before,
