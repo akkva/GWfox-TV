@@ -26,3 +26,6 @@
 
 - Set `browser.theme.native-theme` to true to enable translucency effects
 - Add `gwtv.atbc` to enable [Adaptive Tab Bar Colour](https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour)
+- Add `gwtv.oneliner` to enable Compact layout
+<img width="1154" height="805" alt="01" src="https://github.com/user-attachments/assets/f35e7b77-f3bf-44eb-be0d-3d1d67fb094a" />
+<img width="1154" height="805" alt="02" src="https://github.com/user-attachments/assets/a39bf78e-5e73-4f3a-8025-8eb5f5180410" />
