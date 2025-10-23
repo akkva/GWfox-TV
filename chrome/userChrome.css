@@ -284,6 +284,13 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 }
 
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+  min-height: 6px !important;
+  max-width: 2px !important;
+  margin: 11px 0 0 0 !important;
+  border-radius: 2px !important;
+}
+
 :has(#TabsToolbar:hover) {
 #PersonalToolbar {
   transform: rotateX(90deg);
@@ -1334,13 +1341,6 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
   display: none !important;
 }
 
-.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
-  min-height: 12px !important;
-  max-width: 2px !important;
-  margin: 12px 0 0 0 !important;
-  border-radius: 2px !important;
-}
-
 #tab-preview-panel {
   --panel-padding: 0 !important;
 }
@@ -1492,6 +1492,13 @@ tab-group[previewpanelactive] & {
 
 @media not -moz-pref("sidebar.verticalTabs") {
 @media -moz-pref("gwtv.oneliner") {
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+  min-height: 12px !important;
+  max-width: 2px !important;
+  margin: 12px 0 0 0 !important;
+  border-radius: 2px !important;
+}
+
 .tabbrowser-tab[selected] .tab-stack {
   margin: 0 10px !important;
 }
