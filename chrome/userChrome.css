@@ -242,7 +242,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   padding: 4px 7px !important;
 }
 
-@media not -moz-pref("gwtv.oneline") {
+@media not -moz-pref("gwtv.oneliner") {
 #nav-bar {
   padding-inline-end: 120px !important;
   z-index: 9 !important;
@@ -298,7 +298,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 @media -moz-pref("sidebar.verticalTabs") {
-@media -moz-pref("gwtv.oneline") {
+@media -moz-pref("gwtv.oneliner") {
 #nav-bar {
   padding-inline-end: 120px !important;
   z-index: 9 !important;
@@ -310,7 +310,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 }
 
-@media -moz-pref("gwtv.oneline") {
+@media -moz-pref("gwtv.oneliner") {
 @media not -moz-pref("sidebar.verticalTabs") {
 .titlebar-spacer, #nav-bar:not([customizing]) toolbarspring {
   display: none !important;
@@ -791,7 +791,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   opacity: 1 !important;
 }
 
-@media (not -moz-pref("gwtv.oneline")) or -moz-pref("sidebar.verticalTabs") {
+@media (not -moz-pref("gwtv.oneliner")) or -moz-pref("sidebar.verticalTabs") {
 #urlbar:not([breakout][breakout-extend], [focused], [usertyping]) .urlbar-input-container[pageproxystate="invalid"] {
   padding-inline-start: calc(50% - 105px) !important;
   transition: .35s;
@@ -799,7 +799,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 }
 
-@media -moz-pref("gwtv.oneline") {
+@media -moz-pref("gwtv.oneliner") {
 @media not -moz-pref("sidebar.verticalTabs") {
 .urlbar-page-action:not(#star-button-box) {
   margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding));
@@ -1024,7 +1024,7 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 }
 }
 
-@media -moz-pref("gwtv.oneline") {
+@media -moz-pref("gwtv.oneliner") {
 @media not -moz-pref("sidebar.verticalTabs") {
 #TabsToolbar #alltabs-button,
 #nav-bar #alltabs-button {
@@ -1212,7 +1212,7 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
   grid-gap: unset !important;
 }
 
-@media -moz-pref("gwtv.oneline") {
+@media -moz-pref("gwtv.oneliner") {
 #tabbrowser-tabs[orient="horizontal"] {
   margin-bottom: -21px !important;
 
@@ -1374,7 +1374,7 @@ tab-group[previewpanelactive] & {
   border-radius: 50% !important;
 }
 
-@media not -moz-pref("gwtv.oneline") {
+@media not -moz-pref("gwtv.oneliner") {
 #tabbrowser-tabs[orient="horizontal"] {
 #tabbrowser-arrowscrollbox {
   background-color: var(--button-bgcolor);
@@ -1456,7 +1456,7 @@ tab-group[previewpanelactive] & {
 }
 
 @media not -moz-pref("sidebar.verticalTabs") {
-@media -moz-pref("gwtv.oneline") {
+@media -moz-pref("gwtv.oneliner") {
 .tabbrowser-tab[selected] .tab-stack {
   margin: 0 10px !important;
 }
