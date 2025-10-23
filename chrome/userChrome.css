@@ -1249,7 +1249,8 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
   outline: none !important;
 }
 
-.tabbrowser-tab:not([selected]) .tab-close-button {
+.tabbrowser-tab .tab-close-button,
+#tabbrowser-tabs[movingtab] .tab-close-button {
   visibility: hidden;
 }
 
