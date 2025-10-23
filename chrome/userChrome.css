@@ -24,6 +24,7 @@
   --bs2: 0 5px 15px rgba(0, 0, 0, .25), 0 0 0 1px rgba(0, 0, 0, .4);
   --bs3: 0 6px 22px rgba(15, 15, 15, .1), inset 1px 1.5px 1px -1px rgba(255, 255, 255, .18), inset -.5px -.5px 1px 0 rgba(255, 255, 255, .2);
   --bs4: 0 6px 36px rgba(15, 15, 15, .1), inset 0 0 1.5px 0 rgba(255, 255, 255, .2);
+  --bs5: 0 0 2px rgba(15, 15, 15, .1), inset 1px 1.5px 1px -1px rgba(255, 255, 255, .18), inset -.5px -.5px 1px 0 rgba(255, 255, 255, .2);
   --outline-color: light-dark(#7db0f7, #2c749f);
   --button-bgcolor: light-dark(rgba(70, 70, 70, .12), rgba(170, 170, 170, .15)) !important;
   --button-hover-bgcolor: light-dark(rgba(70, 70, 70, .1), rgba(170, 170, 170, .2)) !important;
@@ -85,6 +86,7 @@
 @media (prefers-color-scheme: dark) {
   --bs3: 0 6px 22px rgba(0, 0, 0, .1), inset 1px 1.5px 1px -1px rgba(255, 255, 255, .18), inset -.5px -.5px 1px 0 rgba(255, 255, 255, .2);
   --bs4: 0 6px 36px rgba(0, 0, 0, .1), inset 0 0 1.5px 0 rgba(255, 255, 255, .2);
+  --bs5: 0 0 2px rgba(0, 0, 0, .1), inset 1px 1.5px 1px -1px rgba(255, 255, 255, .18), inset -.5px -.5px 1px 0 rgba(255, 255, 255, .2);
 }
 @media (-moz-platform: macos) and -moz-pref("browser.theme.native-theme") {
   --toolbar-bgcolor: transparent !important;
@@ -202,7 +204,7 @@
   position: relative;
   width: 100%;
   height: 48px;
-  margin: 0 0 -48px 0 !important;
+  margin: 0 0 -44px 0 !important;
   box-shadow: none !important;
   outline: none !important;
   border-bottom: 1px solid rgba(105, 105, 105, .15) !important;
@@ -213,7 +215,7 @@
   transition: transform 105ms linear 500ms !important;
   z-index: 11;
 @media -moz-pref("sidebar.verticalTabs") {
-  margin: 0 0 -42px 236px !important;
+  margin: 0 0 -44px 236px !important;
   width: calc(100% - 236px);
   border-left: 1px solid rgba(105, 105, 105, .15) !important;
 }
@@ -240,7 +242,63 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   padding: 4px 7px !important;
 }
 
+@media not -moz-pref("gwtv.oneline") {
+#nav-bar {
+  padding-inline-end: 120px !important;
+  z-index: 9 !important;
+
+:has(#nav-bar-overflow-button:not(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) > #nav-bar-overflow-button)) & {
+  padding-inline-end: 156px !important;
+}
+}
+
+@media not -moz-pref("sidebar.verticalTabs") {
+#TabsToolbar {
+  order: 1;
+  min-height: unset !important;
+  margin-left: 6px !important;
+  margin-right: 8px !important;
+> .titlebar-spacer {
+  display: none !important;
+}
+}
+
+#TabsToolbar .tabbrowser-tab:not([pinned]) {
+  border-left: 1px solid transparent !important;
+}
+
+#TabsToolbar .tabbrowser-tab + .tabbrowser-tab:not([selected], :hover) {
+  border-image: linear-gradient( to bottom, transparent 27%, rgba(155, 155, 155, .3) 27%, rgba(155, 155, 155, .3) 74%, transparent 74%) 1 !important;
+}
+
+#TabsToolbar tab-group .tabbrowser-tab + .tabbrowser-tab:not([selected], :hover),
+#TabsToolbar .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]),
+#TabsToolbar .tabbrowser-tab[selected] + .tabbrowser-tab,
+#TabsToolbar .tabbrowser-tab:hover + .tabbrowser-tab {
+  border-image: none !important;
+}
+
+#tabbrowser-tabs[closebuttons="activetab"] {
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+  display: unset !important;
+}
+}
+
+#new-tab-button, #tabs-newtab-button {
+  position: fixed;
+  top: 0;
+  right: 46px;
+  z-index: 9;
+  
+:has(#nav-bar-overflow-button:not(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) > #nav-bar-overflow-button)) & {
+  right: 82px;
+}
+}
+}
+}
+
 @media -moz-pref("sidebar.verticalTabs") {
+@media -moz-pref("gwtv.oneline") {
 #nav-bar {
   padding-inline-end: 120px !important;
   z-index: 9 !important;
@@ -250,7 +308,9 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 }
 }
+}
 
+@media -moz-pref("gwtv.oneline") {
 @media not -moz-pref("sidebar.verticalTabs") {
 .titlebar-spacer, #nav-bar:not([customizing]) toolbarspring {
   display: none !important;
@@ -294,6 +354,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   
 :has(#nav-bar-overflow-button:not(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) > #nav-bar-overflow-button)) & {
   inset-inline-end: 82px;
+}
 }
 }
 }
@@ -730,7 +791,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   opacity: 1 !important;
 }
 
-@media -moz-pref("sidebar.verticalTabs") {
+@media (not -moz-pref("gwtv.oneline")) or -moz-pref("sidebar.verticalTabs") {
 #urlbar:not([breakout][breakout-extend], [focused], [usertyping]) .urlbar-input-container[pageproxystate="invalid"] {
   padding-inline-start: calc(50% - 105px) !important;
   transition: .35s;
@@ -738,6 +799,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 }
 
+@media -moz-pref("gwtv.oneline") {
 @media not -moz-pref("sidebar.verticalTabs") {
 .urlbar-page-action:not(#star-button-box) {
   margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding));
@@ -810,6 +872,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 #urlbar:-moz-window-inactive:hover #identity-permission-box,
 #urlbar:-moz-window-inactive:hover #notification-popup-box {
   opacity: unset !important;
+}
 }
 }
 
@@ -961,6 +1024,8 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 }
 }
 
+@media -moz-pref("gwtv.oneline") {
+@media not -moz-pref("sidebar.verticalTabs") {
 #TabsToolbar #alltabs-button,
 #nav-bar #alltabs-button {
   background: var(--bg5) !important;
@@ -974,14 +1039,44 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
   padding: 8.5px !important;
 }
 }
+}
+}
+
+@media not -moz-pref("sidebar.verticalTabs") {
+#nav-bar #alltabs-button {
+  background: var(--bg5) !important;
+  border-radius: 50% !important;
+  margin: 8px 5px 2px 5px !important;
+  width: 36px !important;
+  height: 36px !important;
+  box-shadow: var(--bs3) !important;
+> .toolbarbutton-badge-stack {
+  scale: 1.1;
+  padding: 8.5px !important;
+}
+}
+
+#TabsToolbar #alltabs-button {
+> .toolbarbutton-badge-stack {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 8.5px !important;
+}
+}
+}
 
 @media -moz-pref("sidebar.verticalTabs") {
 #nav-bar #alltabs-button {
   position: fixed;
+  background: var(--bg5) !important;
+  margin: 8px 5px 2px 5px !important;
+  width: 36px !important;
+  height: 36px !important;
   inset-inline-end: 41px;
   border-radius: 0 !important;
   box-shadow: none !important;
 > .toolbarbutton-badge-stack {
+  scale: 1.1;
   width: 26px !important;
   height: 26px !important;
   padding: 5px 4px 4px 5px !important;
@@ -1102,7 +1197,6 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 
 #tabbrowser-tabs[orient="horizontal"] {
   --tab-min-width: 88px !important;
-  margin-bottom: -21px !important;
   border-inline-start: none !important;
 }
 
@@ -1118,7 +1212,10 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
   grid-gap: unset !important;
 }
 
+@media -moz-pref("gwtv.oneline") {
 #tabbrowser-tabs[orient="horizontal"] {
+  margin-bottom: -21px !important;
+
 &[movingtab] {
   padding-bottom: 0 !important;
   margin-bottom: -21px !important;
@@ -1145,6 +1242,7 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 }
 }
 }
+}
 
 #tabbrowser-tabs[orient="vertical"] .tab-background[selected] {
   background: var(--button-active-bgcolor) !important;
@@ -1152,11 +1250,12 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 }
 
 .tabbrowser-tab:not([selected]) .tab-close-button {
-  display: none;
+  visibility: hidden;
 }
 
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
   display: flex !important;
+  visibility: visible;
 }
 
 .tabbrowser-tab:not([selected], [pinned], :hover) .tab-background {
@@ -1274,7 +1373,89 @@ tab-group[previewpanelactive] & {
   border-radius: 50% !important;
 }
 
+@media not -moz-pref("gwtv.oneline") {
+#tabbrowser-tabs[orient="horizontal"] {
+#tabbrowser-arrowscrollbox {
+  background-color: var(--button-bgcolor);
+  border-radius: 50px;
+}
+
+.tab-background {
+  max-height: 28px !important;
+  min-height: 28px !important;
+  margin: 0 !important;
+&[selected] {
+  outline: none !important;
+  background: light-dark(rgba(255, 255, 255, .8), rgba(255, 255, 255, .15)) !important;
+  box-shadow: var(--bs5) !important;
+@media (-moz-platform: macos) and -moz-pref("browser.theme.native-theme") {
+  background: light-dark(rgba(255, 255, 255, .45), rgba(255, 255, 255, .15)) !important;
+}
+}
+}
+
+#pinned-tabs-container {
+  margin-inline-end: 2px !important;
+}
+
+.tabbrowser-tab:not(:hover, [pinned]) .tab-label-container {
+  padding-inline-end: 6px !important;
+}
+
+.tab-icon-stack {
+  margin-inline-start: auto;
+}
+
+.tab-label-container {
+  max-width: min-content;
+  margin-inline-end: auto;
+}
+
+.tabbrowser-tab {
+&:not([pinned], tab-group[collapsed] > &:not([visuallyselected])) {
+  padding: 2px !important;
+
+&[fadein]:not([style*="max-width"]) {
+  max-width: 100% !important;
+}
+}
+
+&[pinned] {
+  padding: 0 !important;
+
+.tab-content {
+  margin-inline-start: -2px !important;
+}
+
+.tab-background {
+  max-height: 32px !important;
+  min-height: 32px !important;
+  width: 32px !important;
+  background-color: var(--button-bgcolor);
+&[selected] {
+  background-color: light-dark(rgba(70, 70, 70, .22), rgba(170, 170, 170, .3)) !important;
+}
+}
+}
+
+#tabbrowser-tabs:not(:has(tab-group, #tabbrowser-arrowscrollbox > &:not([hidden]))) > #pinned-tabs-container > &:only-of-type,
+#tabbrowser-tabs:not(:has(tab-group, #pinned-tabs-container:not(:empty), &:nth-child(2 of :not([hidden])))) :is(&:only-of-type, :has(&[hidden]) &:nth-of-type(-n+2)) {
+  display: none;
+}
+}
+
+.tab-group-label {
+  margin-top: 0 !important;
+}
+
+.tab-group-line {
+  margin-bottom: 10px !important;
+}
+}
+}
+
 @media not -moz-pref("sidebar.verticalTabs") {
+@media -moz-pref("gwtv.oneline") {
 .tabbrowser-tab[selected] .tab-stack {
   margin: 0 10px !important;
 }
@@ -1289,6 +1470,12 @@ tab-group[previewpanelactive] & {
 
 :has(tab-group[previewpanelactive]) { panel { margin-top: -25px !important; } }
 
+.tab-background {
+  max-height: 36px !important;
+  min-height: 36px !important;
+}
+}
+
 .tabbrowser-tab[selected]:not([pinned]) {
   min-width: 138px !important;
 }
@@ -1299,11 +1486,6 @@ tab-group[previewpanelactive] & {
 
 .tab-content[pinned] .tab-label-container {
   margin: 0 !important;
-}
-
-.tab-background {
-  max-height: 36px !important;
-  min-height: 36px !important;
 }
 
 .tab-group-label {
