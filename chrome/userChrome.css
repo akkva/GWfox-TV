@@ -284,6 +284,12 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 }
 
+:has(#TabsToolbar:hover) {
+#PersonalToolbar {
+  transform: rotateX(90deg);
+}
+}
+
 #new-tab-button, #tabs-newtab-button {
   position: fixed;
   top: 0;
@@ -1414,7 +1420,7 @@ tab-group[previewpanelactive] & {
 
 .tabbrowser-tab {
 &:not([pinned], tab-group[collapsed] > &:not([visuallyselected])) {
-  padding: 2px !important;
+  padding: 2px 2px 2px 1px !important;
 
 &[fadein]:not([style*="max-width"]) {
   max-width: 100% !important;
@@ -2290,6 +2296,11 @@ body {
 
 #context-stop::before {
   content: url("chrome://global/skin/icons/close.svg");
+}
+
+#context-openlinkincurrent::before {
+  content: url("chrome://devtools/skin/images/aboutdebugging-globe-icon.svg");
+  scale: .58;
 }
 
 #context-setDesktopBackground::before {
