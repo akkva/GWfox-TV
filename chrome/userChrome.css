@@ -300,6 +300,35 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   right: 82px;
 }
 }
+
+@media (min-width: 610px) and (max-width: 866px) {
+.toolbarbutton-1:not(#back-button, #forward-button, #stop-button, #reload-button, #PanelUI-menu-button, #nav-bar-overflow-button, #unified-extensions-button, #new-tab-button, #tabs-newtab-button, #sidebar-button) {
+  visibility: collapse;
+}
+}
+
+:has(#nav-bar-overflow-button:not(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) > #nav-bar-overflow-button)) {
+#new-tab-button, #tabs-newtab-button {
+@media (min-width: 610px) and (max-width: 866px) {
+  visibility: collapse;
+}
+}
+
+#back-button {
+@media (min-width: 610px) and (max-width: 866px) {
+  margin-left: 5.5px !important;
+  padding-left: 3px !important;
+  padding-right: 4px !important;
+}
+}
+
+#forward-button {
+@media (min-width: 610px) and (max-width: 866px) {
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}
+}
+}
 }
 }
 
