@@ -1446,7 +1446,7 @@ tab-group[previewpanelactive] & {
 }
 
 .tab-group-label {
-  margin-top: 0 !important;
+  margin: 0 !important;
 }
 
 .tab-group-line {
