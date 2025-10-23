@@ -27,3 +27,11 @@
 - Set `browser.theme.native-theme` to true to enable translucency effects
 - Add `gwtv.atbc` to enable [Adaptive Tab Bar Colour](https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour)
 - Add `gwtv.oneliner` to enable Compact layout
+
+## Relate links
+
+https://github.com/MrOtherGuy/firefox-csshacks
+
+https://github.com/vinceliuice/MacTahoe-gtk-theme
+
+https://github.com/yiiyahui/Neptune-Firefox
