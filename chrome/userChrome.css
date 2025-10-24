@@ -1413,7 +1413,7 @@ tab-group[previewpanelactive] & {
 #tabbrowser-tabs[orient="horizontal"] {
   max-height: 32px !important;
 &[movingtab] {
-  max-height: unset !important;
+  max-height: 47px !important;
 }
 
 #tabbrowser-arrowscrollbox {
