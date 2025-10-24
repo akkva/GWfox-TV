@@ -1309,6 +1309,38 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 }
 }
 
+@media -moz-pref("gwtv.oneliner") or -moz-pref("sidebar.verticalTabs") {
+.tab-content {
+  pointer-events: none;
+}
+
+.tabbrowser-tab:not([pinned]):hover .tab-icon-image {
+  visibility: hidden;
+}
+
+.tab-icon-overlay, .tab-audio-button {
+  pointer-events: auto;
+}
+
+.tab-close-button {
+  pointer-events: auto;
+  margin-inline: 0 -16.5px !important;
+}
+
+#tabbrowser-tabs[movingtab] .tab-icon-image {
+  visibility: visible;
+}
+
+.tab-label-container {
+:is([soundplaying], [muted], [activemedia-blocked]) & {
+  margin-inline-start: 5.5px;
+@media -moz-pref("gwtv.oneliner") {
+  margin-inline-start: 3.5px;
+}
+}
+}
+}
+
 #tabbrowser-tabs[orient="vertical"] .tab-background[selected] {
   background: var(--button-active-bgcolor) !important;
   outline: none !important;
@@ -1322,6 +1354,16 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
   display: flex !important;
   visibility: visible;
+}
+
+.tabbrowser-tab .tab-close-button {
+  order: -1;
+}
+
+.tabbrowser-tab .close-icon {
+  height: 16.5px !important;
+  width: 16.5px !important;
+  padding: 3px !important;
 }
 
 .tabbrowser-tab:not([selected], [pinned], :hover) .tab-background {
@@ -1358,6 +1400,10 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
   :root:not([uidensity=compact]) #tabbrowser-tabs:not([secondarytext-unsupported]) .tabbrowser-tab:not(:hover) &[indicator-replaces-favicon] {
   opacity: 1 !important;
 }
+}
+
+.tab-audio-button {
+  order: 1;
 }
 
 .tab-secondary-label {
@@ -1461,8 +1507,12 @@ tab-group[previewpanelactive] & {
   margin-inline-end: 2px !important;
 }
 
-.tabbrowser-tab:not(:hover, [pinned]) .tab-label-container {
-  padding-inline-end: 6px !important;
+.tabbrowser-tab .tab-close-button {
+  margin-inline-end: 5px !important;
+}
+
+.tab-content {
+  padding: 0 5px !important;
 }
 
 .tab-icon-stack {
@@ -1472,6 +1522,16 @@ tab-group[previewpanelactive] & {
 .tab-label-container {
   max-width: min-content;
   margin-inline-end: auto;
+  padding-inline-end: 10px;
+:is([soundplaying], [muted], [activemedia-blocked]) & {
+  padding-inline-end: 0;
+}
+}
+
+.tab-label {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tabbrowser-tab {
@@ -1488,7 +1548,19 @@ tab-group[previewpanelactive] & {
   padding: 0 !important;
 
 .tab-content {
-  margin-inline-start: -2px !important;
+  margin-inline-start: -2px;
+  margin-inline-end: -5px;
+}
+
+.tab-label-container {
+  visibility: hidden;
+:is([soundplaying], [muted], [activemedia-blocked]) & {
+  padding-inline-end: 10px;
+}
+}
+
+.tab-icon-stack {
+  padding-inline-start: 5px;
 }
 
 .tab-background {
