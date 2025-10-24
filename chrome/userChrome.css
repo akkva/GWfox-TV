@@ -515,6 +515,14 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
 #urlbar:not([breakout][breakout-extend]) {
   transform: none !important;
+  
+.urlbar-page-action,
+#identity-box,
+#notification-popup-box,
+#identity-permission-box,
+#tracking-protection-icon-container {
+  scale: .9;
+}
 
 .searchmode-switcher-close,
 .searchmode-switcher-title {
