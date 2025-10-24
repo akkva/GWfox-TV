@@ -1411,6 +1411,11 @@ tab-group[previewpanelactive] & {
 
 @media not -moz-pref("gwtv.oneliner") {
 #tabbrowser-tabs[orient="horizontal"] {
+  max-height: 32px !important;
+&[movingtab] {
+  max-height: unset !important;
+}
+
 #tabbrowser-arrowscrollbox {
   background-color: var(--button-bgcolor);
   border-radius: 50px;
@@ -1419,7 +1424,6 @@ tab-group[previewpanelactive] & {
 .tab-background {
   max-height: 28px !important;
   min-height: 28px !important;
-  margin: 0 !important;
 &[selected] {
   outline: none !important;
   background: light-dark(rgba(255, 255, 255, .8), rgba(255, 255, 255, .15)) !important;
@@ -1448,6 +1452,7 @@ tab-group[previewpanelactive] & {
 }
 
 .tabbrowser-tab {
+  margin-top: -4px !important;
 &:not([pinned], tab-group[collapsed] > &:not([visuallyselected])) {
   padding: 2px 2px 2px 1px !important;
 
