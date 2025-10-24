@@ -1015,6 +1015,21 @@ toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button
   padding: 0 !important;
   width: 36px !important;
   height: 36px !important;
+@media not -moz-pref("gwtv.oneliner") {
+@media not -moz-pref("sidebar.verticalTabs") {
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 5px !important;
+  background: none !important;
+  box-shadow: none !important;
+> .toolbarbutton-icon,
+> .toolbarbutton-badge-stack {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 8px !important;
+}
+}
+}
 }
 
 @-moz-document url("chrome://browser/content/browser.xhtml") {
