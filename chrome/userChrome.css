@@ -268,7 +268,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 #TabsToolbar .tabbrowser-tab + .tabbrowser-tab:not([selected], :hover) {
-  border-image: linear-gradient( to bottom, transparent 27%, rgba(155, 155, 155, .3) 27%, rgba(155, 155, 155, .3) 74%, transparent 74%) 1 !important;
+  border-image: linear-gradient( to bottom, transparent 34%, rgba(155, 155, 155, .3) 34%, rgba(155, 155, 155, .3) 76%, transparent 76%) 1 !important;
 }
 
 #TabsToolbar tab-group .tabbrowser-tab + .tabbrowser-tab:not([selected], :hover),
