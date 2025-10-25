@@ -850,12 +850,9 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
 @media (not -moz-pref("gwtv.oneliner")) or -moz-pref("sidebar.verticalTabs") {
 #urlbar:not([breakout][breakout-extend], [focused], [usertyping]) .urlbar-input-container[pageproxystate="invalid"] {
-  padding-inline-start: calc(50% - 115px) !important;
+  padding-inline-start: calc(50% - 125px) !important;
   transition: .35s;
   transition-delay: .25s;
-@media (min-width: 610px) and (max-width: 866px) {
-  padding-inline-start: calc(50% - 135px) !important;
-}
 }
 }
 
