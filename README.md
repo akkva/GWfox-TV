@@ -1,8 +1,8 @@
 ## <p align="center"> <b> GWfox-TV 🦊 </b> </p>
 <p align="center">This theme compatible with Firefox 145+ on macOS Tahoe</p>
 <picture>
-<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/f35e7b77-f3bf-44eb-be0d-3d1d67fb094a">
-<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/a39bf78e-5e73-4f3a-8025-8eb5f5180410">
+<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/47702563-cf65-4a9f-99ce-35d762f03750">
+<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/192e715b-d55d-45c0-be6e-457d03cfb59a">
 <img alt="01">
 </picture>
 
@@ -35,5 +35,3 @@ https://github.com/MrOtherGuy/firefox-csshacks
 https://github.com/vinceliuice/MacTahoe-gtk-theme
 
 https://github.com/yiiyahui/Neptune-Firefox
-<img width="1100" height="759" alt="01" src="https://github.com/user-attachments/assets/47702563-cf65-4a9f-99ce-35d762f03750" />
-<img width="1100" height="759" alt="02" src="https://github.com/user-attachments/assets/192e715b-d55d-45c0-be6e-457d03cfb59a" />
