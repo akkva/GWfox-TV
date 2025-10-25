@@ -2354,7 +2354,6 @@ body {
 .tab-icon-image[src="chrome://branding/content/icon32.png"],
 .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
   content: url(chrome://devtools/skin/images/browsers/firefox.svg);
-  scale: .9;
   opacity: .8;
 }
 
