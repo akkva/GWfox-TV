@@ -35,3 +35,5 @@ https://github.com/MrOtherGuy/firefox-csshacks
 https://github.com/vinceliuice/MacTahoe-gtk-theme
 
 https://github.com/yiiyahui/Neptune-Firefox
+<img width="1085" height="759" alt="01" src="https://github.com/user-attachments/assets/281d3aa8-9b01-4e69-9fb7-a63c94aefeed" />
+<img width="1085" height="759" alt="02" src="https://github.com/user-attachments/assets/a59eff75-1e07-45b9-b9aa-1bc36f011f2d" />
