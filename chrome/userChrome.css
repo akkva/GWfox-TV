@@ -266,21 +266,6 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 }
 
-#TabsToolbar .tabbrowser-tab:not([pinned]) {
-  border-left: 1px solid transparent !important;
-}
-
-#TabsToolbar .tabbrowser-tab + .tabbrowser-tab:not([selected], :hover) {
-  border-image: linear-gradient( to bottom, transparent 34%, rgba(155, 155, 155, .3) 34%, rgba(155, 155, 155, .3) 76%, transparent 76%) 1 !important;
-}
-
-#TabsToolbar tab-group .tabbrowser-tab + .tabbrowser-tab:not([selected], :hover),
-#TabsToolbar .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]),
-#TabsToolbar .tabbrowser-tab[selected] + .tabbrowser-tab,
-#TabsToolbar .tabbrowser-tab:hover + .tabbrowser-tab {
-  border-image: none !important;
-}
-
 #tabbrowser-tabs[closebuttons="activetab"] {
 .tabbrowser-tab:not([pinned]) .tab-close-button {
   display: unset !important;
@@ -1352,7 +1337,18 @@ tab-group[collapsed] {
   opacity: .5;
 }
 
-.tab-background[selected] {
+.tabbrowser-tab[pinned] .tab-background {
+  outline: none !important;
+  background-color: var(--button-bgcolor) !important;
+&:hover {
+  background-color: var(--button-hover-bgcolor) !important;
+}
+&[selected] {
+  background-color: var(--button-active-bgcolor) !important;
+}
+}
+
+.tabbrowser-tab:not([pinned]) .tab-background[selected] {
   outline: none !important;
   background: var(--bg5) !important;
   box-shadow: var(--bs3) !important;
@@ -1634,7 +1630,7 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
   width: 32px !important;
   background-color: var(--button-bgcolor);
 &[selected] {
-  background-color: light-dark(rgba(70, 70, 70, .22), rgba(170, 170, 170, .3)) !important;
+  background-color: var(--button-active-bgcolor) !important;
 }
 }
 }
@@ -1660,12 +1656,18 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
   border-radius: 2px !important;
 }
 
-.tabbrowser-tab[selected] .tab-stack {
+.tabbrowser-tab[selected]:not([pinned]) .tab-stack {
   margin: 0 10px !important;
 }
 
-.tabbrowser-tab[selected] {
+.tabbrowser-tab[selected]:not([pinned]) {
   margin: 0 -8px !important;
+&:first-of-type:not(tab-group > &:first-of-type) {
+  margin-left: 0 !important;
+}
+&:last-of-type:not(tab-group > &:last-of-type) {
+  margin-right: 0 !important;
+}
 }
 
 #tab-preview-panel {
@@ -1678,6 +1680,22 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
   max-height: 36px !important;
   min-height: 36px !important;
 }
+}
+
+#TabsToolbar .tabbrowser-tab:not([pinned]) {
+  border-left: 1px solid transparent !important;
+}
+
+#TabsToolbar .tabbrowser-tab + .tabbrowser-tab:not([selected], :hover) {
+  border-image: linear-gradient( to bottom, transparent 34%, rgba(155, 155, 155, .3) 34%, rgba(155, 155, 155, .3) 76%, transparent 76%) 1 !important;
+@media -moz-pref("gwtv.oneliner") { border-image: linear-gradient( to bottom, transparent 25%, rgba(155, 155, 155, .3) 25%, rgba(155, 155, 155, .3) 47%, transparent 47%) 1 !important; }
+}
+
+#TabsToolbar tab-group .tabbrowser-tab + .tabbrowser-tab:not([selected], :hover),
+#TabsToolbar .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]),
+#TabsToolbar .tabbrowser-tab[selected] + .tabbrowser-tab,
+#TabsToolbar .tabbrowser-tab:hover + .tabbrowser-tab {
+  border-image: none !important;
 }
 
 .tab-background {
