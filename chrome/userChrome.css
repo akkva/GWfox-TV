@@ -3250,6 +3250,9 @@ tab-group[collapsed] > .tab-group-label-container & {
 &:not(:has([sidebar-shown])) {
 .titlebar-buttonbox-container {
   margin-right: 5px !important;
+@media (min-width: 610px) and (max-width: 866px) {
+  margin-top: 19px !important;
+}
 }
 
 #navigator-toolbox {
