@@ -36,8 +36,8 @@
   --color-accent-primary-active: light-dark(#005ebb, #0055bc) !important;
   --button-text-color-primary: #fff !important;
   --bg4: light-dark(rgba(255, 255, 255, .45), rgba(25, 25, 25, .45));
-  --bs1: 0 5px 15px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .2);
-  --bs2: 0 5px 15px rgba(0, 0, 0, .25), 0 0 0 1px rgba(0, 0, 0, .4);
+  --bs1: 0 5px 15px rgba(0, 0, 0, .2), inset 0 0 0 .5px rgba(0, 0, 0, .34), 0 0 0 .5px rgba(0, 0, 0, .12);
+  --bs2: 0 5px 15px rgba(0, 0, 0, .25), inset 0 0 0 .5px rgba(0, 0, 0, .78), 0 0 0 .5px rgba(0, 0, 0, .2);
 @media not -moz-pref("gwtv.atbc") {
   --in-content-page-background: light-dark(#fff, #1e1e1e) !important;
   --newtab-background-color: light-dark(#fff, #1e1e1e) !important;
@@ -519,11 +519,6 @@ body {
 .context-menu-button {
   fill: #fff !important;
 }
-
-.context-menu {
-  border: 1px solid rgba(235, 245, 255, .15) !important;
-  box-shadow: var(--bs2) !important;
-}
 }
 
 @media (prefers-color-scheme: light) {
@@ -635,7 +630,7 @@ body {
 .customize-menu {
   background-color: var(--bg4) !important;
   backdrop-filter: blur(15px) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .15) !important;
+  box-shadow: var(--bs1) !important;
   margin: 11px 11px 0 0 !important;
   height: 98% !important;
 }
@@ -687,14 +682,10 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-.modal, .contentSearchSuggestionTable {
+.modal, .contentSearchSuggestionTable, .customize-menu, .context-menu {
   box-shadow: var(--bs2) !important;
-  border: 1px solid rgba(235, 245, 255, .15) !important;
-}
-
-.customize-menu {
   outline: 1px solid rgba(235, 235, 235, .2) !important;
-  outline-offset: -1px !important;
+  outline-offset: -1.5px !important;
 }
 }
 }
