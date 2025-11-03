@@ -1660,6 +1660,7 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
   background-color: var(--button-bgcolor);
 &[selected] {
   background-color: var(--button-active-bgcolor) !important;
+  box-shadow: none !important;
 }
 }
 }
