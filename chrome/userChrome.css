@@ -270,6 +270,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   min-height: unset !important;
   margin-left: 6px !important;
   margin-right: 8px !important;
+  padding-bottom: 6px !important;
 > .titlebar-spacer {
   display: none !important;
 }
