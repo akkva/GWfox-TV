@@ -1625,9 +1625,9 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
 
 .tabbrowser-tab {
   margin-top: -4px !important;
-  transition-duration: .35s !important;
 &:not([pinned], tab-group[collapsed] > &:not([visuallyselected])) {
   padding: 2px 2px 2px 1px !important;
+  transition-duration: .35s !important;
 
 &[fadein]:not([style*="max-width"]) {
   max-width: 100% !important;
@@ -1687,7 +1687,9 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
 @media not -moz-pref("sidebar.verticalTabs") {
 @media -moz-pref("gwtv.oneliner") {
 .tabbrowser-tab {
+&:not(tab-group[collapsed] > &:not([visuallyselected])) {
   transition: none !important;
+}
 }
 
 .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
