@@ -270,9 +270,13 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   min-height: unset !important;
   margin-left: 6px !important;
   margin-right: 8px !important;
-  padding-bottom: 6px !important;
 > .titlebar-spacer {
   display: none !important;
+}
+& .toolbarbutton-1:not(#new-tab-button, #tabs-newtab-button) {
+:root:not([customizing]) & {
+  display: none;
+}
 }
 &:-moz-window-inactive {
   opacity: 1 !important;
@@ -1550,14 +1554,25 @@ tab-group[previewpanelactive] & {
 
 @media not -moz-pref("gwtv.oneliner") {
 #tabbrowser-tabs[orient="horizontal"] {
-  max-height: 32px !important;
+  max-height: 38px !important;
+&:has(tab:not(:only-of-type), #pinned-tabs-container:not(:empty)) {
+  min-height: 38px !important;
+}
 &[movingtab] {
   max-height: 47px !important;
+  margin-bottom: -9px !important;
+}
+
+:has(tab:only-of-type) {
+.tab-close-button {
+  visibility: hidden !important;
+}
 }
 
 #tabbrowser-arrowscrollbox {
   background-color: var(--button-bgcolor);
   border-radius: 50px;
+  max-height: 32px !important;
 }
 
 .tab-background {
@@ -1635,6 +1650,7 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
 
 .tab-icon-stack {
   padding-inline-start: 5px;
+  margin-bottom: 2px;
 }
 
 .tab-background {
