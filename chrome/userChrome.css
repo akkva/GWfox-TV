@@ -1675,6 +1675,11 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
 
 .tab-group-label {
   margin: 0 !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+  line-height: 28px !important;
 }
 }
 }
@@ -1755,7 +1760,11 @@ tab:hover & {
   color: light-dark(var(--tab-group-color), var(--tab-group-color-invert)) !important;
   opacity: .9;
   outline: none !important;
-  min-width: 5px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  line-height: 36px !important;
   font-weight: normal !important;
   margin-top: -22px !important;
   margin-left: 5px !important;
