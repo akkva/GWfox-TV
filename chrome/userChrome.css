@@ -1681,6 +1681,10 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
 
 @media not -moz-pref("sidebar.verticalTabs") {
 @media -moz-pref("gwtv.oneliner") {
+.tabbrowser-tab {
+  transition: none !important;
+}
+
 .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
   min-height: 12px !important;
   max-width: 2px !important;
