@@ -1625,6 +1625,7 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
 
 .tabbrowser-tab {
   margin-top: -4px !important;
+  transition-duration: .35s !important;
 &:not([pinned], tab-group[collapsed] > &:not([visuallyselected])) {
   padding: 2px 2px 2px 1px !important;
 
