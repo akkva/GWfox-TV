@@ -1631,6 +1631,7 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
 
 &[fadein]:not([style*="max-width"]) {
   max-width: 100% !important;
+  transition: none !important;
 }
 }
 
