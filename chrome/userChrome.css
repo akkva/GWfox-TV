@@ -1687,7 +1687,7 @@ tab-group[collapsed] > .tabbrowser-tab[visuallyselected] > .tab-stack > & {
 @media not -moz-pref("sidebar.verticalTabs") {
 @media -moz-pref("gwtv.oneliner") {
 .tabbrowser-tab {
-&:not(tab-group[collapsed] > &:not([visuallyselected])) {
+&:not(tab-group > &:not([visuallyselected])) {
   transition: none !important;
 }
 }
@@ -1769,8 +1769,6 @@ tab:hover & {
   line-height: 36px !important;
   font-weight: normal !important;
   margin-top: -22px !important;
-  margin-left: 5px !important;
-  margin-right: 5px !important;
   background-color: color-mix(in srgb, light-dark(var(--tab-group-color), var(--tab-group-color-invert)) 30%, transparent) !important;
 }
 
