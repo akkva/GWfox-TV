@@ -15,6 +15,7 @@
 
 @media (-moz-mac-tahoe-theme) {
 :root {
+  --bg1: light-dark(#3f8eff, #1355b9);
   --bg2: light-dark(#fff, #454545);
   --bg3: light-dark(rgba(50, 50, 50, .1), rgba(225, 225, 225, .1));
   --bg4: light-dark(rgba(255, 255, 255, .45), rgba(25, 25, 25, .45));
@@ -1899,17 +1900,23 @@ menupopup .bookmark-item {
   margin: 2px 0 !important;
 }
 
-menupopup menu:hover:not([disabled=true]),
-menupopup menuitem:hover:not([disabled=true]),
-menupopup menu[_moz-menuactive]:not([disabled=true]),
-menupopup menuitem[_moz-menuactive]:not([disabled=true]),
-.protections-popup-footer-button:not([disabled=true]):hover,
-#protections-popup-show-report-stack:hover .protections-popup-footer-button,
-.protections-popup-category:not([disabled=true]):hover,
-.identity-popup-content-blocking-category:not([disabled=true]):hover,
-#PlacesToolbar .bookmark-item:is(:hover, [open], [_moz-menuactive]),
-#downloadsPanel-mainView .download-state:hover {
-  background: var(--button-hover-bgcolor) !important;
+#downloadsListBox > richlistitem, #downloadsHistory,
+menupopup menu, menupopup menuitem, menupopup menu[_moz-menuactive], menupopup menuitem[_moz-menuactive],
+toolbarbutton.subviewbutton:not(#appMenu-zoomEnlarge-button2, #appMenu-zoomReduce-button2, #appMenu-fullscreen-button2) {
+&:hover:not([disabled=true]) {
+  background-color: var(--bg1) !important;
+  color: #fff !important;
+}
+}
+
+#protections-popup-show-report-stack:hover:not([disabled=true]) {
+  color: #fff !important;
+> .protections-popup-footer-button {
+  background-color: var(--bg1) !important;
+}
+}
+
+#fxa-menu-header-title {
   color: inherit !important;
 }
 
@@ -2104,23 +2111,35 @@ input[type="checkbox"] {
 
 treechildren::-moz-tree-row {
   outline: none !important;
-  border-radius: 2px !important;
+  border-radius: 7px !important;
+  margin-inline: 5px !important;
 }
 
 treechildren::-moz-tree-row(selected) {
-  background: var(--button-hover-bgcolor) !important;
+  background: transparent !important;
+}
+
+treechildren::-moz-tree-row(hover),
+treechildren::-moz-tree-row(selected, focus) {
+  background: var(--bg1) !important;
+}
+
+treechildren::-moz-tree-cell-text(hover),
+treechildren::-moz-tree-cell-text(selected, focus) {
+  color: #fff !important;
+}
+
+treechildren::-moz-tree-image(hover),
+treechildren::-moz-tree-twisty(hover),
+treechildren::-moz-tree-image(selected, focus),
+treechildren::-moz-tree-twisty(selected, focus) {
+  fill: #fff !important;
 }
 
 .item.selected > .item-title-container {
   background: var(--button-hover-bgcolor) !important;
   color: light-dark(#000, #fff) !important;
   border-radius: 2px !important;
-}
-
-treechildren::-moz-tree-image(selected),
-treechildren::-moz-tree-twisty(selected),
-treechildren::-moz-tree-cell-text(selected) {
-  color: light-dark(#000, #fff) !important;
 }
 
 .titleIcon {
@@ -2389,6 +2408,13 @@ body {
   border: 1px solid var(--bg3);
   border-radius: 12px;
 }
+}
+
+sidebar-tab-row {
+  --button-background-color-ghost-hover: var(--bg1) !important;
+  --button-background-color-ghost-active: color-mix(in srgb, var(--bg1) 90%, transparent) !important;
+  --button-text-color-ghost-hover: #fff !important;
+  --button-text-color-ghost-active: #fff !important;
 }
 
 /* icons */
