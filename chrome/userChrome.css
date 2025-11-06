@@ -3220,7 +3220,7 @@ tab-group > .tabbrowser-tab,
 }
 
 #PersonalToolbar:not([customizing]) {
-  margin: 0 0 -42px 0 !important;
+  margin: 0 0 -44px 0 !important;
   width: 100%;
 }
 
