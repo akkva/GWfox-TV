@@ -67,8 +67,8 @@
   --sidebar-box-border: transparent !important;
   --sidebar-box-background: light-dark(rgba(102, 105, 108, .1), rgba(165, 165, 165, .1)) !important;
   --urlbarView-action-button-background-color: var(--button-bgcolor) !important;
-  --urlbarView-hover-background: var(--button-hover-bgcolor) !important;
-  --urlbarView-highlight-background: var(--button-active-bgcolor) !important;
+  --urlbarView-hover-background: var(--bg1) !important;
+  --urlbarView-highlight-background: var(--bg1) !important;
   --urlbarView-highlight-color: light-dark(#000, #fff) !important;
   --input-bgcolor: light-dark(rgba(70, 70, 70, .1), rgba(170, 170, 170, .2)) !important;
   --input-border-color: transparent !important;
@@ -431,6 +431,22 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 .urlbarView-row & {
   color: light-dark(#5a5a5a, #a2a2a2) !important;
 }
+
+.urlbarView-row:hover & {
+  color: light-dark(#c8ffff, #95dcff) !important;
+}
+}
+
+.urlbarView-row:is([selected], :hover) {
+  color: #fff !important;
+}
+
+.urlbarView-action-btn {
+  color: light-dark(#5a5a5a, #a2a2a2) !important;
+  font-weight: unset !important;
+&:hover {
+  color: #fff !important;
+}
 }
 
 .urlbarView-row[has-action]:is([type="switchtab"], [type="remotetab"], [type="clipboard"]) {
@@ -438,6 +454,10 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   border: none !important;
   color: light-dark(#5a5a5a, #a2a2a2) !important;
   background-color: var(--button-bgcolor) !important;
+}
+
+> .urlbarView-row-inner:hover > .urlbarView-no-wrap > .urlbarView-action {
+  color: light-dark(#c8ffff, #95dcff) !important;
 }
 }
 
