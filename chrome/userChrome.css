@@ -15,7 +15,7 @@
 
 @media (-moz-mac-tahoe-theme) {
 :root {
-  --bg1: light-dark(#3f8eff, #1355b9);
+  --bg1: light-dark(#3f8eff, #207bff);
   --bg2: light-dark(#fff, #454545);
   --bg3: light-dark(rgba(50, 50, 50, .1), rgba(225, 225, 225, .1));
   --bg4: light-dark(rgba(255, 255, 255, .45), rgba(25, 25, 25, .45));
@@ -429,7 +429,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
 .urlbarView-url {
 .urlbarView-row & {
-  color: light-dark(#5a5a5a, #a2a2a2) !important;
+  color: light-dark(#3e3f40, #c4c4c5) !important;
 }
 
 .urlbarView-row:is([selected], :hover) & {
@@ -442,7 +442,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 .urlbarView-action-btn {
-  color: light-dark(#5a5a5a, #a2a2a2) !important;
+  color: light-dark(#3e3f40, #c4c4c5) !important;
   font-weight: unset !important;
 &:hover {
   color: #fff !important;
@@ -452,7 +452,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 .urlbarView-row[has-action]:is([type="switchtab"], [type="remotetab"], [type="clipboard"]) {
 > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action {
   border: none !important;
-  color: light-dark(#5a5a5a, #a2a2a2) !important;
+  color: light-dark(#3e3f40, #c4c4c5) !important;
   background-color: var(--button-bgcolor) !important;
 }
 
