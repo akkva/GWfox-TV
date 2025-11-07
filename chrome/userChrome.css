@@ -15,7 +15,7 @@
 
 @media (-moz-mac-tahoe-theme) {
 :root {
-  --bg1: light-dark(#3f8eff, #207bff);
+  --bg1: -moz-menuhover;
   --bg2: light-dark(#fff, #454545);
   --bg3: light-dark(rgba(50, 50, 50, .1), rgba(225, 225, 225, .1));
   --bg4: light-dark(rgba(255, 255, 255, .45), rgba(25, 25, 25, .45));
