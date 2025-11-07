@@ -36,7 +36,7 @@
   --color-accent-primary-active: light-dark(#005ebb, #0055bc) !important;
   --button-text-color-primary: #fff !important;
   --border-color: rgba(105, 105, 105, .2) !important;
-  --bg1: light-dark(#3f8eff, #1355b9);
+  --bg1: light-dark(#3f8eff, #207bff);
   --bg4: light-dark(rgba(255, 255, 255, .45), rgba(25, 25, 25, .45));
   --bs1: 0 5px 15px rgba(0, 0, 0, .2), inset 0 0 0 .5px rgba(0, 0, 0, .34), 0 0 0 .5px rgba(0, 0, 0, .12);
   --bs2: 0 5px 15px rgba(0, 0, 0, .25), inset 0 0 0 .5px rgba(0, 0, 0, .78), 0 0 0 .5px rgba(0, 0, 0, .2);
