@@ -432,7 +432,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   color: light-dark(#5a5a5a, #a2a2a2) !important;
 }
 
-.urlbarView-row:hover & {
+.urlbarView-row:is([selected], :hover) & {
   color: light-dark(#c8ffff, #95dcff) !important;
 }
 }
