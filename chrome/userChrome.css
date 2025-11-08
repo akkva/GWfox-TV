@@ -2935,12 +2935,16 @@ sidebar-tab-row {
   content: url("chrome://global/skin/media/audio.svg") !important;
 }
 
-#context_unpinTab::before,
-#context_unpinSelectedTabs::before,
 #context_pinTab::before,
 #context_pinSelectedTabs::before {
-  content: url("chrome://browser/skin/pin-12.svg") !important;
-  scale: 1.1;
+  content: url("chrome://newtab/content/data/content/assets/glyph-pin-16.svg") !important;
+  scale: .8;
+}
+
+#context_unpinTab::before,
+#context_unpinSelectedTabs::before {
+  content: url("chrome://newtab/content/data/content/assets/glyph-unpin-16.svg") !important;
+  scale: .8;
 }
 
 #context_duplicateTab::before,
