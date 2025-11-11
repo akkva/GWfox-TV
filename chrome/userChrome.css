@@ -914,74 +914,88 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
 @media -moz-pref("gwtv.oneliner") {
 @media not -moz-pref("sidebar.verticalTabs") {
-.urlbar-page-action:not(#star-button-box) {
-  margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding));
-  opacity: 0 !important;
-  transition: .2s;
+#urlbar:not(:hover, [open]) {
+.urlbar-input {
+  padding-inline-start: 10px !important;
+  padding-inline-end: 15px !important;
 }
 
-#urlbar:hover .urlbar-page-action {
-  margin-inline-end: 0 !important;
+.urlbar-input-container[pageproxystate="invalid"] .urlbar-input {
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
+}
+}
+
+.urlbar-page-action {
+  margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding));
+  opacity: 0;
+  transition: .25s;
 }
 
 #urlbar[open] .urlbar-page-action,
+#urlbar:hover .urlbar-page-action,
 .urlbar-page-action[open] {
+  opacity: 1;
   margin-inline-end: 0 !important;
 }
 
 :has(#page-action-buttons > *[open]) {
 .urlbar-page-action {
+  opacity: 1;
   margin-inline-end: 0 !important;
 }
 }
 
-:has(#identity-permission-box > *[open]) {
-#identity-permission-box {
+:has(#identity-box > *[open]) {
+#identity-box {
+  opacity: 1;
   margin-inline-start: 0 !important;
 }
 }
 
-#identity-permission-box, #notification-popup-box, #tracking-protection-icon-container {
+#identity-box, #identity-permission-box, #notification-popup-box, #tracking-protection-icon-container {
   margin-inline-start: calc(-16px - 2 * var(--urlbar-icon-padding));
-  opacity: 0 !important;
-  transition: .2s;
-}
-
-#urlbar:hover #tracking-protection-icon-container {
-  margin-inline-start: 0 !important;
+  opacity: 0;
+  transition: .25s;
 }
 
 #urlbar[open] #tracking-protection-icon-container,
+#urlbar:hover #tracking-protection-icon-container,
 #tracking-protection-icon-container[open] {
+  opacity: 1;
   margin-inline-start: 0 !important;
 }
 
-#urlbar:hover #identity-permission-box,
-#urlbar:hover #notification-popup-box {
-  margin-inline-start: 0 !important;
-}
-
+#urlbar[open] #identity-box,
 #urlbar[open] #identity-permission-box,
 #urlbar[open] #notification-popup-box,
+#urlbar:hover #identity-box,
+#urlbar:hover #identity-permission-box,
+#urlbar:hover #notification-popup-box,
+#identity-box[open],
 #identity-permission-box[open],
 #notification-popup-box[open] {
+  opacity: 1;
   margin-inline-start: 0 !important;
 }
 
 .urlbar-page-action:active,
+#identity-box:active,
 #identity-permission-box:active,
 #notification-popup-box:active,
 #tracking-protection-icon-container:active {
-  opacity: unset !important;
+  opacity: unset;
 }
 
-#urlbar:-moz-window-inactive .urlbar-page-action:not(#star-button-box),
+#urlbar:-moz-window-inactive .urlbar-page-action,
+#urlbar:-moz-window-inactive #identity-box,
 #urlbar:-moz-window-inactive #identity-permission-box,
 #urlbar:-moz-window-inactive #notification-popup-box {
-  opacity: 0 !important !important;
+  opacity: 0 !important;
 }
 
-#urlbar:-moz-window-inactive:hover .urlbar-page-action:not(#star-button-box),
+#urlbar:-moz-window-inactive:hover .urlbar-page-action,
+#urlbar:-moz-window-inactive:hover #identity-box,
 #urlbar:-moz-window-inactive:hover #identity-permission-box,
 #urlbar:-moz-window-inactive:hover #notification-popup-box {
   opacity: unset !important;
@@ -3657,7 +3671,7 @@ tab-group[collapsed] > .tab-group-label-container & {
 }
 }
 
-:has(#sidebar-main:hover, #tabContextMenu:hover, .tab-throbber[busy], #tab-group-name:focus, .tab-group-editor-panel *:hover, #tabbrowser-tabs[movingtab]) {
+:has(#sidebar-main:hover, #tabContextMenu:hover, .tab-group-editor-panel[panelopen="true"], #tabbrowser-tabs[movingtab]) {
 #sidebar-main {
   left: 8px;
   transition: .25s;
