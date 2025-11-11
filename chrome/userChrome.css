@@ -441,14 +441,6 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   color: #fff !important;
 }
 
-.urlbarView-action-btn {
-  color: light-dark(#3e3f40, #c4c4c5) !important;
-  font-weight: unset !important;
-&:hover {
-  color: #fff !important;
-}
-}
-
 .urlbarView-row[has-action]:is([type="switchtab"], [type="remotetab"], [type="clipboard"]) {
 > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action {
   border: none !important;
@@ -466,6 +458,11 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 .urlbarView-action-btn {
+  color: light-dark(#3e3f40, #c4c4c5) !important;
+  font-weight: unset !important;
+&:hover {
+  color: light-dark(#c8ffff, #95dcff) !important;
+}
 &[data-action^="tabgroup-"] {
   color: light-dark(#3e3f40, #c4c4c5) !important;
   background-color: var(--button-bgcolor) !important;
