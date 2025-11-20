@@ -489,10 +489,6 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   border-radius: 50% !important;
 }
 
-.searchmode-switcher {
-  margin-top: 3px !important;
-}
-
 .searchmode-switcher-dropmarker {
   display: none !important;
 }
@@ -783,13 +779,22 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 .urlbar-input-container {
-  padding-inline-start: 28px !important;
-  background-image: url(chrome://global/skin/icons/search-glass.svg);
-  background-repeat: no-repeat;
-  background-position: left 6px bottom 7px;
+  padding-inline-start: 8px !important;
+&::before {
+  content: url("chrome://global/skin/icons/search-glass.svg");
+  margin-top: 8.5px;
+  margin-right: 5px;
   -moz-context-properties: fill, fill-opacity;
   fill: currentColor;
-  fill-opacity: .69;
+  fill-opacity: .48;
+}
+@media (not -moz-pref("gwtv.oneliner")) or -moz-pref("sidebar.verticalTabs") {
+#urlbar:not([breakout][breakout-extend], [focused], [usertyping]) & {
+  padding-inline-start: calc(50% - 105px) !important;
+  transition: .35s;
+  transition-delay: .25s;
+}
+}
 }
 
 .urlbar-input-container[pageproxystate="valid"] .urlbar-input {
@@ -797,8 +802,10 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 #urlbar[breakout][breakout-extend] .urlbar-input-container {
-  padding-inline-start: 43px !important;
-  background-position: left 21px bottom 16px;
+  padding-inline-start: 21px !important;
+&::before {
+  margin-top: 16px;
+}
 }
 
 .urlbar-input {
@@ -911,6 +918,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
 @media -moz-pref("gwtv.oneliner") {
 @media not -moz-pref("sidebar.verticalTabs") {
+&:not(:has(#identity-box[pageproxystate="valid"].extensionPage)) {
 #urlbar:not(:hover, [open]) {
 .urlbar-input {
   padding-inline-start: 10px !important;
@@ -926,7 +934,17 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 .urlbar-page-action {
   margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding));
   opacity: 0;
-  transition: .25s;
+}
+
+#identity-box, #identity-permission-box, #notification-popup-box, #tracking-protection-icon-container {
+  margin-inline-start: calc(-16px - 2 * var(--urlbar-icon-padding));
+  opacity: 0;
+}
+
+#urlbar:not([breakout][breakout-extend]) {
+.urlbar-page-action, #identity-box, #identity-permission-box, #notification-popup-box, #tracking-protection-icon-container {
+  transition: .2s;
+}
 }
 
 #urlbar[open] .urlbar-page-action,
@@ -948,12 +966,6 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   opacity: 1;
   margin-inline-start: 0 !important;
 }
-}
-
-#identity-box, #identity-permission-box, #notification-popup-box, #tracking-protection-icon-container {
-  margin-inline-start: calc(-16px - 2 * var(--urlbar-icon-padding));
-  opacity: 0;
-  transition: .25s;
 }
 
 #urlbar[open] #tracking-protection-icon-container,
@@ -983,19 +995,6 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 #tracking-protection-icon-container:active {
   opacity: unset;
 }
-
-#urlbar:-moz-window-inactive .urlbar-page-action,
-#urlbar:-moz-window-inactive #identity-box,
-#urlbar:-moz-window-inactive #identity-permission-box,
-#urlbar:-moz-window-inactive #notification-popup-box {
-  opacity: 0 !important;
-}
-
-#urlbar:-moz-window-inactive:hover .urlbar-page-action,
-#urlbar:-moz-window-inactive:hover #identity-box,
-#urlbar:-moz-window-inactive:hover #identity-permission-box,
-#urlbar:-moz-window-inactive:hover #notification-popup-box {
-  opacity: unset !important;
 }
 }
 }
@@ -3447,8 +3446,8 @@ tab-group[collapsed] > .tab-group-label-container & {
 }
 }
 
-:root:not([chromehidden~="toolbar"], [customizing], [inDOMFullscreen]) {
-&:not(:has([sidebar-shown])) {
+@media -moz-pref("sidebar.visibility", "hide-sidebar") {
+:root:not([chromehidden~="toolbar"], [customizing], [inDOMFullscreen]):has(#tabbrowser-tabs:not([expanded])) {
 .titlebar-buttonbox-container {
   margin-right: 5px !important;
 @media (min-width: 610px) and (max-width: 866px) {
@@ -3465,11 +3464,17 @@ tab-group[collapsed] > .tab-group-label-container & {
 &:not(:hover) {
   top: -53px;
   transition: top .25s !important;
-  transition-delay: 1s !important;
+  transition-delay: .5s !important;
 }
 }
 
-:has(#urlbar:not([breakout][breakout-extend], [usertyping]) #page-action-buttons > *[open], #urlbar:not([breakout][breakout-extend], [usertyping]) #identity-box > *[open], #urlbar:not([breakout][breakout-extend], [usertyping]) #identity-permission-box[open], #urlbar:not([breakout][breakout-extend], [usertyping]) #notification-popup-box[open], #urlbar:not([breakout][breakout-extend], [usertyping]) #tracking-protection-icon-container[open], #PanelUI-menu-button[open], #nav-bar-overflow-button[open], #unified-extensions-button[open], #downloads-button[open], #alltabs-button[open], #urlbar:not([breakout][breakout-extend], [usertyping]:not([persistsearchterms])) .searchmode-switcher[open], #placesContext:hover) {
+:has(#urlbar[open]) {
+#navigator-toolbox {
+  top: -95px;
+}
+}
+
+:has(#urlbar:not([open]) :is(.urlbar-page-action[open], .identity-box-button[open], #notification-popup-box[open], #tracking-protection-icon-container[open]), toolbarbutton:is(#unified-extensions-button, #downloads-button, #PanelUI-menu-button, #nav-bar-overflow-button, #alltabs-button)[open], #urlbar:not([open], [usertyping]:not([persistsearchterms])) .searchmode-switcher[open], #placesContext:hover) {
 #navigator-toolbox {
   top: 0;
 }
@@ -3643,7 +3648,7 @@ tab-group[collapsed] > .tab-group-label-container & {
   backdrop-filter: blur(15px);
   overflow: unset !important;
   transition: .25s;
-  transition-delay: 1s;
+  transition-delay: .5s;
   box-shadow: var(--bs1);
 @media (prefers-color-scheme: dark) {
   box-shadow: var(--bs2);
@@ -3671,7 +3676,8 @@ tab-group[collapsed] > .tab-group-label-container & {
 :has(#sidebar-main:hover, #tabContextMenu:hover, .tab-group-editor-panel[panelopen="true"], #tabbrowser-tabs[movingtab]) {
 #sidebar-main {
   left: 8px;
-  transition: .25s;
+  transition: .5s;
+  transition-timing-function: cubic-bezier(.27, 1.217, .17, 1.0117);
 }
 }
 }
